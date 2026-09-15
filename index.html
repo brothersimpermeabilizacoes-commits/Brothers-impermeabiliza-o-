@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08233f">
+  <meta name="description" content="Brothers Impermeabilização — proteção contra infiltração. Impermeabilização de lajes, coberturas, piscinas, reservatórios, áreas frias e muito mais.">
+  <title>Brothers Impermeabilização | Proteção contra infiltração</title>
+
+  <style>
+    :root{
+      --azul:#08233f;
+      --azul2:#0e355b;
+      --laranja:#f47b16;
+      --claro:#f5f7fa;
+      --texto:#18212b;
+      --branco:#fff;
+      --sombra:0 12px 35px rgba(0,0,0,.12);
+      --raio:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--texto);
+      background:#fff;
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+
+    /* TOPO */
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(8,35,63,.97);
+      box-shadow:0 4px 18px rgba(0,0,0,.18);
+    }
+    .nav{
+      min-height:76px;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}
+    .brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:50%}
+    .brand span{font-size:18px;line-height:1.1}
+    .brand small{display:block;color:#ff8a22;font-size:11px;margin-top:4px}
+    .menu{display:flex;gap:22px;align-items:center;color:#fff;font-weight:700}
+    .menu a:hover{color:#ff8a22}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;padding:14px 22px;border-radius:999px;
+      background:var(--laranja);color:#fff;font-weight:800;
+      border:0;cursor:pointer;transition:.2s;
+    }
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+    .btn-outline{background:transparent;border:2px solid #fff}
+
+    /* HERO */
+    .hero{
+      background:linear-gradient(135deg,#061d35 0%,#0d3559 65%,#102f4c 100%);
+      color:#fff;padding:72px 0 65px;overflow:hidden;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+    .tag{
+      display:inline-block;padding:7px 13px;border-radius:999px;
+      background:rgba(244,123,22,.16);color:#ff9a43;
+      font-weight:800;font-size:13px;margin-bottom:18px;
+      border:1px solid rgba(244,123,22,.35)
+    }
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin-bottom:20px}
+    h1 span{color:var(--laranja)}
+    .hero p{font-size:19px;color:#e7eef5;max-width:620px;margin-bottom:28px}
+    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{
+      background:#fff;border-radius:26px;padding:12px;
+      box-shadow:0 25px 60px rgba(0,0,0,.28)
+    }
+    .hero-card img{width:100%;height:430px;object-fit:cover;border-radius:18px}
+    .badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .badge{padding:10px 13px;border-radius:12px;background:rgba(255,255,255,.08);font-size:13px;font-weight:700}
+
+    /* SEÇÕES */
+    section{padding:78px 0}
+    .section-title{text-align:center;max-width:760px;margin:0 auto 42px}
+    .section-title .eyebrow{color:var(--laranja);font-weight:900;text-transform:uppercase;letter-spacing:1px;font-size:13px}
+    .section-title h2{font-size:clamp(30px,4vw,45px);color:var(--azul);line-height:1.1;margin:7px 0 12px}
+    .section-title p{color:#5c6670}
+
+    /* SERVIÇOS */
+    .services{background:var(--claro)}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service{
+      background:#fff;padding:24px;border-radius:var(--raio);
+      box-shadow:var(--sombra);border-top:4px solid var(--laranja)
+    }
+    .icon{font-size:32px;margin-bottom:12px}
+    .service h3{color:var(--azul);font-size:18px;margin-bottom:7px}
+    .service p{font-size:14px;color:#66717b}
+
+    /* DIFERENCIAIS */
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .feature{text-align:center;padding:25px;border:1px solid #e5e9ee;border-radius:var(--raio)}
+    .feature .big{font-size:38px}
+    .feature h3{color:var(--azul);margin:10px 0 5px}
+    .feature p{font-size:14px;color:#68727c}
+
+    /* SOBRE */
+    .about{background:#fff}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+    .about-img{border-radius:24px;box-shadow:var(--sombra);overflow:hidden}
+    .about-img img{width:100%;height:520px;object-fit:cover}
+    .about h2{font-size:42px;color:var(--azul);line-height:1.1;margin:10px 0 18px}
+    .about p{color:#56616c;margin-bottom:14px}
+    .checklist{list-style:none;margin:22px 0}
+    .checklist li{margin:11px 0;font-weight:700}
+    .checklist li::before{content:"✓";display:inline-flex;width:25px;height:25px;border-radius:50%;background:var(--laranja);color:#fff;align-items:center;justify-content:center;margin-right:9px}
+
+    /* GALERIA */
+    .gallery{background:var(--claro)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .gallery-item{overflow:hidden;border-radius:16px;background:#ddd;box-shadow:var(--sombra)}
+    .gallery-item img{width:100%;height:290px;object-fit:cover;transition:.35s}
+    .gallery-item:hover img{transform:scale(1.05)}
+
+    /* CTA */
+    .cta{padding:70px 0;background:var(--azul);color:#fff}
+    .cta-box{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta h2{font-size:clamp(30px,4vw,46px);line-height:1.1;margin-bottom:10px}
+    .cta p{color:#dbe5ee;max-width:700px}
+
+    /* CONTATO */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact-card{background:#fff;border:1px solid #e3e8ed;border-radius:20px;padding:28px;box-shadow:var(--sombra)}
+    .contact-card h3{color:var(--azul);font-size:23px;margin-bottom:14px}
+    .contact-line{display:flex;gap:13px;align-items:flex-start;margin:16px 0}
+    .contact-line strong{display:block;color:var(--azul)}
+    .contact-line span{color:#65707b;font-size:14px}
+    .whats{background:#1fae59}
+    .whats:hover{filter:brightness(1.05)}
+
+    /* RODAPÉ */
+    footer{background:#04182c;color:#d7e0e8;padding:35px 0}
+    .footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}
+    footer strong{color:#fff}
+    footer small{color:#aab8c4}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a:hover{color:#ff8a22}
+
+    /* BOTÃO FLUTUANTE */
+    .float{
+      position:fixed;right:18px;bottom:18px;z-index:999;
+      width:58px;height:58px;border-radius:50%;
+      background:#1fae59;color:#fff;display:flex;align-items:center;justify-content:center;
+      font-size:27px;box-shadow:0 8px 25px rgba(0,0,0,.25)
+    }
+
+    @media(max-width:900px){
+      .menu{display:none}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{padding-top:45px}
+      .hero-card img{height:340px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .cta-box{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:560px){
+      section{padding:58px 0}
+      .brand img{width:48px;height:48px}
+      .brand span{font-size:15px}
+      .brand small{font-size:9px}
+      .hero{padding:42px 0}
+      h1{font-size:42px}
+      .hero p{font-size:17px}
+      .hero-card img{height:300px}
+      .service-grid,.features,.gallery-grid{grid-template-columns:1fr}
+      .gallery-item img{height:250px}
+      .footer-grid{flex-direction:column;align-items:flex-start}
+      .btn{width:100%}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio">
+      <img src="logo.jpg" alt="Logo Brothers Impermeabilização">
+      <span>BROTHERS<small>IMPERMEABILIZAÇÃO</small></span>
+    </a>
+    <nav class="menu">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Obras</a>
+      <a href="#contato">Contato</a>
+      <a class="btn" href="https://wa.me/5511940364528?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Brothers%20Impermeabiliza%C3%A7%C3%A3o%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag">PROTEÇÃO CONTRA INFILTRAÇÃO</span>
+        <h1>Protegemos sua obra.<br><span>Evitamos problemas futuros.</span></h1>
+        <p>
+          A Brothers Impermeabilização oferece mão de obra especializada
+          para proteger lajes, coberturas, piscinas, reservatórios, áreas frias
+          e diversas outras estruturas contra infiltrações.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn" href="https://wa.me/5511940364528?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Brothers%20Impermeabiliza%C3%A7%C3%A3o%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">📱 Solicitar orçamento</a>
+          <a class="btn btn-outline" href="#galeria">📸 Ver nossos trabalhos</a>
+        </div>
+        <div class="badges">
+          <div class="badge">🛡️ Garantia de 6 anos*</div>
+          <div class="badge">👷 Mão de obra especializada</div>
+          <div class="badge">📋 Orçamento personalizado</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="apresentacao.png" alt="Brothers Impermeabilização">
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">O que fazemos</div>
+        <h2>Nossos serviços</h2>
+        <p>Soluções de impermeabilização para diferentes tipos de áreas e necessidades.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service"><div class="icon">🏠</div><h3>Lajes e coberturas</h3><p>Proteção para áreas expostas à chuva e à umidade.</p></article>
+        <article class="service"><div class="icon">🚿</div><h3>Áreas frias</h3><p>Banheiros, cozinhas e áreas de serviço.</p></article>
+        <article class="service"><div class="icon">🏊</div><h3>Piscinas</h3><p>Impermeabilização e proteção das estruturas.</p></article>
+        <article class="service"><div class="icon">💧</div><h3>Reservatórios</h3><p>Serviços em reservatórios e caixas d'água.</p></article>
+        <article class="service"><div class="icon">🔥</div><h3>Mantas asfálticas</h3><p>Execução de sistemas com manta asfáltica.</p></article>
+        <article class="service"><div class="icon">🧱</div><h3>Mantas líquidas</h3><p>Aplicação conforme a necessidade da área.</p></article>
+        <article class="service"><div class="icon">⚙️</div><h3>Poliuretano e cimentícios</h3><p>Soluções para diferentes condições de impermeabilização.</p></article>
+        <article class="service"><div class="icon">🏢</div><h3>Terraços e sacadas</h3><p>Proteção de terraços, sacadas, floreiras e encontros.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">Por que escolher a Brothers?</div>
+        <h2>Qualidade, segurança e responsabilidade</h2>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="big">🛡️</div><h3>Proteção eficiente</h3><p>Ajuda a evitar infiltrações, umidade, mofo e danos.</p></div>
+        <div class="feature"><div class="big">👷</div><h3>Equipe especializada</h3><p>Profissionais preparados para executar um serviço de qualidade.</p></div>
+        <div class="feature"><div class="big">🏅</div><h3>Garantia de 6 anos</h3><p>Garantia conforme as condições e o sistema contratado.</p></div>
+        <div class="feature"><div class="big">📋</div><h3>Orçamento personalizado</h3><p>Analisamos sua necessidade para indicar a solução adequada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div class="about-img"><img src="obra-3.jpg" alt="Serviço de impermeabilização realizado pela Brothers"></div>
+      <div>
+        <div class="eyebrow" style="color:var(--laranja);font-weight:900">Brothers Impermeabilização</div>
+        <h2>Seu imóvel protegido começa com uma boa impermeabilização.</h2>
+        <p>
+          Trabalhamos com impermeabilização de diferentes áreas, buscando
+          uma execução cuidadosa e adequada às características de cada obra.
+        </p>
+        <ul class="checklist">
+          <li>Execução com mão de obra especializada</li>
+          <li>Avaliação da necessidade da obra</li>
+          <li>Serviços para áreas residenciais e comerciais</li>
+          <li>Orçamento sem compromisso</li>
+        </ul>
+        <a class="btn" href="https://wa.me/5511954160275?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Brothers%20e%20quero%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar com a Brothers</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">Trabalhos</div>
+        <h2>Algumas de nossas obras</h2>
+        <p>Veja exemplos de serviços e etapas de impermeabilização.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="laje-1.jpg" alt="Impermeabilização de laje"></div>
+        <div class="gallery-item"><img src="laje-2.jpg" alt="Manta em cobertura"></div>
+        <div class="gallery-item"><img src="obra-1.jpg" alt="Aplicação de impermeabilização"></div>
+        <div class="gallery-item"><img src="obra-2.jpg" alt="Manta asfáltica em obra"></div>
+        <div class="gallery-item"><img src="obra-3.jpg" alt="Preparação de superfície"></div>
+        <div class="gallery-item"><img src="apresentacao.png" alt="Brothers Impermeabilização"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-box">
+      <div>
+        <h2>Está com infiltração?</h2>
+        <p>Solicite uma avaliação e receba um orçamento personalizado para sua obra.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5511940364528?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20impermeabiliza%C3%A7%C3%A3o." target="_blank" rel="noopener">📲 Solicitar orçamento</a>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">Fale conosco</div>
+        <h2>Entre em contato</h2>
+        <p>Atendimento rápido e orçamento personalizado.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>📱 WhatsApp</h3>
+          <div class="contact-line">
+            <div>🟢</div>
+            <div><strong>11 94036-4528</strong><span>Fale conosco pelo WhatsApp</span></div>
+          </div>
+          <a class="btn whats" href="https://wa.me/5511940364528?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Brothers%20Impermeabiliza%C3%A7%C3%A3o%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Abrir WhatsApp</a>
+        </div>
+
+        <div class="contact-card">
+          <h3>🏢 Brothers Impermeabilização</h3>
+          <div class="contact-line"><div>📞</div><div><strong>11 95416-0275</strong><span>Contato</span></div></div>
+          <div class="contact-line"><div>🧾</div><div><strong>CNPJ: 67.290.059/0001-32</strong><span>Brothers Impermeabilização</span></div></div>
+          <div class="contact-line"><div>🛡️</div><div><strong>Proteção contra infiltração</strong><span>Solicite seu orçamento</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>BROTHERS IMPERMEABILIZAÇÃO</strong><br>
+      <small>Proteção contra infiltração</small>
+    </div>
+    <div class="footer-links">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Obras</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <small>© 2026 Brothers Impermeabilização</small>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/5511940364528?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="WhatsApp">☏</a>
+</body>
+</html>
